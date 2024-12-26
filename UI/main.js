@@ -1,6 +1,15 @@
 var Rewards = [];
 var VehiclesFound = [];
 var ItemsFound = [];
+var selectedRewards = {
+    "vehicles" : {
+
+    },
+    "money" : 0,
+    "items" : {
+
+    },
+}
 
 window.addEventListener('message', function(event) {
     var item = event.data;
@@ -151,6 +160,10 @@ $(document).on('click', '.table-row-veh', function() {
         name: VehiclesFound[vehicleID].name,
         model: VehiclesFound[vehicleID].model 
     }));
+
+    let vehName = $(this).find(".table-element").text();
+
+    selectedRewards["vehicles"][vehName] = true;
 }); 
     
 $(document).on('click', '.table-row-item', function() {
@@ -163,6 +176,10 @@ $(document).on('click', '.table-row-item', function() {
             amount: 1,
             name: ItemsFound[itemID].name,
         }));
+
+        let itemName = $(this).find(".table-element").text();
+
+        selectedRewards["items"][itemName] = true;
 });
 
 $(document).on('click', '#ConfirmMoney', function() {

@@ -32,7 +32,7 @@ p{
 /* Classes */
 
 .Main {
-    display: none;
+    display: block;
 
     top: 7.5%;
     right : 0%;
