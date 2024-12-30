@@ -1,40 +1,133 @@
 <html>
 <header>
-   <!-- <script src="nui://game/ui/jquery.js" type="text/javascript"></script>-->
+    
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="main.js"></script>
+    <script src="./scripts/animations.js"></script> <!-- Handles more complex animations -->
+    <script src="./scripts/main.js"></script> 
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Jomhuria' rel='stylesheet'>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="main.css">
+
+
 </header>
 
 <body>
     <div class = "main">
         <div class = "codeRewards">
-            <button class="ExitButton">&#10006;</button>
+            
+            <button class="exitButton">
+                <div class="exitButtonIcon">&#10006;</div>
+            </button> <!-- Exit button, closes down the UI and resets all its fields, as well as takes you back to the starting screen-->
             <p class="Header-Text">CODE REWARDS</p>
-            <div class = "selectRewardsScreen">
-                <div class = "buttons">
-                    <button class="Button">VEHICLES</button>
-                    <button class="Button">MONEY</button>
-                    <button class="Button">ITEMS</button>
+
+            <div class = "selectRewardsScreen"> <!-- Dictates how large of an area the whole rewards selection section can take up on the UI -->
+
+                <div class = "screenSelectorButtons">
+                    <button class="screenSelectorButton" id = "vehiclesButton">VEHICLES</button>
+                    <button class="screenSelectorButton" id = "moneyButton">MONEY</button>
+                    <button class="screenSelectorButton" id = "itemsButton">ITEMS</button>
                 </div>
-                <div class = "vehiclesScreen">
-                    <div class="SearchBar" id = "vehicleSearchBar">
-                        <p class="searchBarText">GANG NAME:</p>
-                        <input type="text" class="SearchBarBG" id="gangNameInputBox">
+
+                <div class = "screens">  
+                    <!-- 
+                    This section of the code covers the different reward screens,
+                    these being the vehicles, money and items. These screens let you select rewards
+                    from each of the category's
+                    -->
+                    <div class = "vehiclesScreen">
+
+                       <!-- Search bar is reused for items screen, hence the ID-->
+                        <input type="text" class="searchBar" id = "vehicleSearchBar" placeholder="SEARCH FOR VEHICLES"> 
+
+                        <div class = "rewardsListArea">
+                            <div class = "rewardCard vehicleCard">
+                                <p class = "cardTitle"> Porsche 911 GT3 RS</p>
+                                <img class = "cardImage" src = "porsche.png">
+                                <div class = "cardButton vehButton">
+                                    <img class = "cardButtonIcon" src = "plus.png">
+                                </div>
+                            </div>
+
+                            <div class = "rewardCard vehicleCard">
+                                <p class = "cardTitle"> Porsche 911 GT3 RS</p>
+                                <img class = "cardImage" src = "porsche.png">
+                                <div class = "cardButton vehButton">
+                                    <img class = "cardButtonIcon" src = "plus.png">
+                                </div>
+                            </div>
+
+                            <div class = "rewardCard vehicleCard">
+                                <p class = "cardTitle"> Porsche 911 GT3 RS</p>
+                                <img class = "cardImage" src = "porsche.png">
+                                <div class = "cardButton vehButton">
+                                    <img class = "cardButtonIcon" src = "plus.png">
+                                </div>
+                            </div>
+                            
+                            <div class = "rewardCard vehicleCard">
+                                <p class = "cardTitle"> Porsche 911 GT3 RS</p>
+                                <img class = "cardImage" src = "porsche.png">
+                                <div class = "cardButton vehButton">
+                                    <img class = "cardButtonIcon" src = "plus.png">
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-                <div class = "moneyScreen">
+
+                    <div class = "moneyScreen">
+    
+                    </div>
+
+                    <div class = "itemsScreen">
+
+                        <input type="text" class="searchBar" id = "itemSearchBar" placeholder="SEARCH FOR ITEMS"> 
+
+                        <div class = "rewardsListArea">
+                            <div class = "rewardCard itemCard">
+                                <p class = "cardTitle"> Crowbar</p>
+                                <img class = "cardImage" src = "porsche.png">
+                                <div class = "cardButton itemAddButton">
+                                    <img class = "cardButtonIcon" src = "plus.png">
+                                </div>
+                                <div class = "itemQuantity"> 0 </div>
+                                <div class = "cardButton itemRemoveButton">
+                                    <img class = "cardButtonIcon" src = "minus.png">
+                                </div>
+                            </div>
+
+                            <div class = "rewardCard itemCard">
+                                <p class = "cardTitle"> Crowbar</p>
+                                <img class = "cardImage" src = "porsche.png">
+                                <div class = "cardButton itemAddButton">
+                                    <img class = "cardButtonIcon" src = "plus.png">
+                                </div>
+                                <div class = "itemQuantity"> 0 </div>
+                                <div class = "cardButton itemRemoveButton">
+                                    <img class = "cardButtonIcon" src = "minus.png">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
 
                 </div>
-                <div class = "itemsScreen">
 
+                <div class = "bottomButtons">  <!-- These buttons are static across all of the different rewards screens, they do exactly what they are labeled as-->
+                    <button class="Button" id = "confirmRewardsButton">CONFIRM REWARDS</button> <!-- Takes you to reward summary screen -->
+                    <button class="Button" id = "editExistingButton">EDIT EXISTING CODE</button>
                 </div>
+
             </div>
-            <div class = "confirmRewardsScreen">
+
+            <div class = "confirmRewardsScreen"> <!-- Shows all of the contents of the current code -->
 
             </div>
         </div>

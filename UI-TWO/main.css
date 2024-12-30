@@ -1,36 +1,95 @@
-/* MAIN BODY */
+/* GENERAL STYLES */
+
 p{
+    margin: 0%;
     color: #FFFFFF;
 }
 
+input{
+    box-sizing: border-box;
+
+    margin-left: 0px;
+    padding-top: 10px;
+    padding-left: 20px;
+
+    font-family: 'Jomhuria';
+    font-size: 60px;
+    font-weight:normal;
+    text-align: left;
+
+    background: linear-gradient(86.23deg, rgba(255, 255, 255, 0.85) 2.47%, rgba(69, 67, 67, 0.5) 97.53%);
+    color: rgb(255, 255, 255);
+    caret-color: white;
+    outline: none;
+
+    border: 3px solid #FFFFFF;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+button{
+
+    font-family: 'Jomhuria';
+    font-size: 45px;
+
+    box-sizing: border-box;
+
+    background: radial-gradient(50% 50% at 50% 50%, rgba(149, 149, 149, 0.85) 0%, rgba(210, 210, 210, 0.85) 100%);
+    border-radius: 10px;
+    border: none;
+
+    color: white;
+}
+
+button:hover{
+    background: #ffffff;
+    color: #000000;
+}
+
+
+::placeholder{
+    font-size: 60px;
+    text-align: center;
+
+    color: white;
+}
+
+
+/* MAIN BODY */
+
 .main{
+    display: flex;
+    justify-content: center;
+
     font-family: 'Jomhuria';font-size: 40px;
     font-weight:normal;
 
     height: 100%;
     width: 100%;
 
-    display: flex;
-    justify-content: center;
+    user-select: none;
 }
 
 .Header-Text {
-    /* GANG-NAME GARAGE */
     position: relative;
-    margin: 0px;
-    font-size: 64px;
-    top: 1%;
-    left: 30%;
-    bottom: 0%;
-    height: 50px;
 
+    font-size: 96px;
+
+    text-align: center;
+
+    height: 80px;
+    width: 100%;
 }
 
 .codeRewards {
-    display: block;
-    /* Background */
-    top: 20%;
     position: absolute;
+    display: block;
+
+    top: 10%;
+
     width: 668px;
     height: 861px;
 
@@ -38,18 +97,20 @@ p{
     border-radius: 50px;
 
 }
-/* MAIN BODY */
 
 /* EXIT BUTTON */
 
-.ExitButton{
+.exitButton{
+    position: absolute;
     box-sizing: border-box;
+
     font-size:22px;
+
     z-index: 1;
+
     top: 2%;
     left: 3%;
 
-    position: absolute;
     width: 38px;
     height: 38px;
 
@@ -60,12 +121,52 @@ p{
 
 }
 
-.ExitButton:hover{
+.exitButtonIcon{
+    position: absolute;
+
+    top: 22%;
+    left: 28%;
+}
+
+.exitButton:hover{
     background: #ff0000;
     color: #ffffff;
 }
 
-/* EXIT BUTTON */
+/*CONFIRM REWARDS AND EDIT EXISTING*/
+
+.bottomButtons{
+    position: absolute;
+
+    bottom: 0%;
+
+    width: 100%;
+    height: 20%;
+}
+
+#confirmRewardsButton{
+    position: absolute;
+
+    padding-top: 10px;
+
+    width: 322px;
+    height: 60px;
+
+    top: 10%;
+    left: 20%;
+}
+
+#editExistingButton{
+    position: absolute;
+
+    font-size: 30px;
+
+    width: 182.05px;
+    height: 33px;
+
+    bottom: 20%;
+    left: 32%;
+}
 
 /* REWARDS SELECTION SCREEN */
 
@@ -73,69 +174,173 @@ p{
     position: absolute;
 
     top: 7.5%;
-    left: 12.5%;
+    left: 11.5%;
 
-    width: 75%;
+    width: 76.5%;
     height: 90%;
 }
 
-/* #BUTTONS */
-button{
-    font-family: 'Jomhuria';font-size: 40px;
-}
+.screens{
+    position: absolute;
 
-.buttons{
-    position: relative;
+    top: 15%;
+
+    height: 70%;
     width: 100%;
-    top: 5%;
-
-    display: flex;
-    justify-content: space-between
 }
 
-.Button{
+.rewardsListArea{
+    display: flex;
+    position: absolute;
 
-    box-sizing: border-box;
+    align-content: flex-start;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:10px;
+
+    top: 12%;
+
+    height: 90%;
+    width: 100%;
+}
+
+.screenSelectorButton{
     width: 151px;
     height: 37px;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(149, 149, 149, 0.85) 0%, rgba(210, 210, 210, 0.85) 100%);
-    border-radius: 10px;
-
-    border: none;
-
-    font-size: 45px;
-    color: white;
 }
 
-.Button:hover{
-    background: #ffffff;
-    color: #000000;
-}
-/* #BUTTONS */
-
-/* #VEHICLES SCREEN */
-
-.SearchBarBG{
-    box-sizing: border-box;
-    margin-left: 0px;
-    font-family: 'Passion one';font-size: 40px;
-    color: rgb(2, 2, 2);
-    font-weight:normal;
-
-    box-sizing: border-box;
-
+.screenSelectorButtons{
+    display: flex;
+    justify-content: space-between;
     position: absolute;
+
+    width: 100%;
+    top: 5%;
+}
+
+/* #SEARCH BAR */
+
+.searchBar{
+    position: absolute;
+    
     width: 511px;
     height: 52px;
-
-    background: linear-gradient(86.23deg, rgba(255, 255, 255, 0.85) 2.47%, rgba(69, 67, 67, 0.5) 97.53%);
-    border: 3px solid #FFFFFF;
-    border-radius: 10px;
-    
-    outline: none;
 }
 
-/* #VEHICLES SCREEN */
+/* #REWARD CARD */
+.rewardCard{
+    position: relative;
+    width: 161px;
+    height: 93px;
 
+    background: radial-gradient(50% 50% at 50% 50%, rgba(149, 149, 149, 0) 0%, rgba(180, 180, 180, 0.25) 38.5%, rgba(210, 210, 210, 0.5) 100%);
+    border-radius: 10px;
+}
 
-/* REWARDS SELECTION SCREEN */
+.cardTitle{
+    position: absolute;
+
+    font-size: 16px;
+    text-align: center;
+
+    top: 0%;
+    left: 0%;
+
+    height: 15%;
+    width: 100%;
+}
+
+.cardImage{
+    position: absolute;
+
+    bottom: 15%;
+    left: 3%;
+
+    height: 50px;
+    width: 114px;
+}
+
+.cardButton{
+    position: absolute;
+    width: 28px;
+    height: 28px;
+
+    background: radial-gradient(50% 50% at 50% 50%, rgba(149, 149, 149, 0.85) 0%, rgba(210, 210, 210, 0.85) 100%);
+    border-radius: 10px;
+}
+
+.cardButton:hover{
+    background: #ffffff;
+    color: #000000;
+
+    .cardButtonIcon{ /* when hovering over the cardButton, the card button icon color is inverted*/
+        filter: invert();
+        -webkit-filter: invert();
+    }
+}
+
+.cardButtonIcon{
+    position: absolute;
+    top: 10%;
+    left: 12.5%;
+    height: 21px;
+    width: 21px;
+}
+
+/* VEHICLES SCREEN*/
+
+.vehiclesScreen{
+    display: none;
+
+    height: 100%;
+    width: 100%;
+}
+
+.vehButton {
+    bottom: 35%;
+    right: 3%;
+}
+
+/* MONEY SCREEN*/
+
+.moneyScreen {
+    display: none;
+}
+
+/* ITEMS SCREEN*/
+
+.itemsScreen {
+    display: block;
+}
+
+.itemAddButton{
+    top: 15%;
+    right: 5%;
+}
+
+.itemRemoveButton{
+    bottom: 5%;
+    right: 5%;
+}
+
+.itemRemoveButton .cardButtonIcon{
+    top: 15%;
+}
+
+.itemQuantity{
+    position: absolute;
+
+    font-size: 15px;
+    text-align: center;
+
+    bottom: 38%;
+    right: 5%;
+
+    width: 27px;
+    height: 13px;
+
+    background: radial-gradient(50% 50% at 50% 50%, rgba(149, 149, 149, 0.85) 0%, rgba(210, 210, 210, 0.85) 100%);
+    border-radius: 10px;
+    color: white;
+}
