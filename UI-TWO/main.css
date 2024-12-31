@@ -124,8 +124,8 @@ button:hover{
 .exitButtonIcon{
     position: absolute;
 
-    top: 22%;
-    left: 28%;
+    top: 8%;
+    left: 25%;
 }
 
 .exitButton:hover{
@@ -133,7 +133,7 @@ button:hover{
     color: #ffffff;
 }
 
-/*CONFIRM REWARDS AND EDIT EXISTING*/
+/*Bottom Section of rewards selection screen*/
 
 .bottomButtons{
     position: absolute;
@@ -147,25 +147,49 @@ button:hover{
 #confirmRewardsButton{
     position: absolute;
 
-    padding-top: 10px;
+    padding-top: 5px;
+    font-size: 64px;
+    
+    top: 10%;
+    left: 20%;
 
     width: 322px;
     height: 60px;
-
-    top: 10%;
-    left: 20%;
 }
 
 #editExistingButton{
     position: absolute;
+    display: block;
 
-    font-size: 30px;
+    padding-top: 2.5px;
+    font-size: 32px;
+    
+    bottom: 20%;
+    left: 32%;
 
     width: 182.05px;
     height: 33px;
+}
+
+#existingCodeInput{
+    display: none;
+
+    font-size: 32px;
 
     bottom: 20%;
     left: 32%;
+
+    width: 182.05px;
+    height: 33px;
+}
+
+#existingCodeInput::placeholder{
+    position: absolute;
+
+    font-size: 32px;
+
+    top: 0%;
+    left: 25%;
 }
 
 /* REWARDS SELECTION SCREEN */
@@ -185,7 +209,7 @@ button:hover{
 
     top: 15%;
 
-    height: 70%;
+    height: 65%;
     width: 100%;
 }
 
@@ -198,8 +222,6 @@ button:hover{
     flex-direction: row;
     flex-wrap: wrap;
     gap:10px;
-
-    top: 12%;
 
     height: 90%;
     width: 100%;
@@ -282,8 +304,8 @@ button:hover{
 
 .cardButtonIcon{
     position: absolute;
-    top: 10%;
-    left: 12.5%;
+    top: 12.5%;
+    left: 13%;
     height: 21px;
     width: 21px;
 }
@@ -297,6 +319,11 @@ button:hover{
     width: 100%;
 }
 
+#vehicleRewardsList{
+    top:12%;
+}
+
+
 .vehButton {
     bottom: 35%;
     right: 3%;
@@ -305,13 +332,96 @@ button:hover{
 /* MONEY SCREEN*/
 
 .moneyScreen {
-    display: none;
+    display: block;
+
+    height: 100%;
+    width: 100%;
 }
+
+#chooseAmount{
+    position: absolute;
+
+    font-size: 48px;
+    text-align: center;
+
+    width: 100%;
+}
+
+#orCustomAmount{
+    position: absolute;
+
+    font-size: 48px;
+    text-align: center;
+
+    top: 30%;
+
+    width: 100%; 
+}
+
+
+#moneyPresets{
+    justify-content: space-evenly;
+
+    top: 10%;
+}
+
+.moneyPreset .cardTitle{
+    font-size: 24px;
+}
+
+#moneyInput{
+    top: 40%;
+
+}
+
+#moneyInput::placeholder{
+    position: absolute;
+
+    font-size: 48px;
+
+    top: 10%;
+}
+
+.moneyButtons{
+    position:absolute;
+
+    display: flex;
+
+    justify-content: space-evenly;
+
+    bottom: 30%;
+
+    width: 100%;
+}
+
+#confirmMoney{
+    padding-top: 10px;
+    font-size: 46px;
+
+    width: 322px;
+    height: 60px;
+}
+
+#cancelMoney{
+    padding-top: 10px;
+    font-size: 46px;
+
+    width: 147px;
+    height: 60px;
+}
+
+
+
+
 
 /* ITEMS SCREEN*/
 
 .itemsScreen {
-    display: block;
+    display: none;
+}
+
+#itemRewardsList{
+    top:12%;
 }
 
 .itemAddButton{

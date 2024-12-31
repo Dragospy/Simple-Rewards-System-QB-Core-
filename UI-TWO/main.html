@@ -46,36 +46,40 @@
                        <!-- Search bar is reused for items screen, hence the ID-->
                         <input type="text" class="searchBar" id = "vehicleSearchBar" placeholder="SEARCH FOR VEHICLES"> 
 
-                        <div class = "rewardsListArea">
+                        <div class = "rewardsListArea" id = "vehicleRewardsList">
                             <div class = "rewardCard vehicleCard">
                                 <p class = "cardTitle"> Porsche 911 GT3 RS</p>
-                                <img class = "cardImage" src = "porsche.png">
+                                <img class = "cardImage" src = "./images/porsche.png">
+
                                 <div class = "cardButton vehButton">
-                                    <img class = "cardButtonIcon" src = "plus.png">
+                                    <img class = "cardButtonIcon" src = "./images/plus.png">
                                 </div>
                             </div>
 
                             <div class = "rewardCard vehicleCard">
                                 <p class = "cardTitle"> Porsche 911 GT3 RS</p>
-                                <img class = "cardImage" src = "porsche.png">
+                                <img class = "cardImage" src = "./images/porsche.png">
+
                                 <div class = "cardButton vehButton">
-                                    <img class = "cardButtonIcon" src = "plus.png">
+                                    <img class = "cardButtonIcon" src = "./images/plus.png">
                                 </div>
                             </div>
 
                             <div class = "rewardCard vehicleCard">
                                 <p class = "cardTitle"> Porsche 911 GT3 RS</p>
-                                <img class = "cardImage" src = "porsche.png">
+                                <img class = "cardImage" src = "./images/porsche.png">
+
                                 <div class = "cardButton vehButton">
-                                    <img class = "cardButtonIcon" src = "plus.png">
+                                    <img class = "cardButtonIcon" src = "./images/plus.png">
                                 </div>
                             </div>
                             
                             <div class = "rewardCard vehicleCard">
                                 <p class = "cardTitle"> Porsche 911 GT3 RS</p>
-                                <img class = "cardImage" src = "porsche.png">
+                                <img class = "cardImage" src = "./images/porsche.png">
+
                                 <div class = "cardButton vehButton">
-                                    <img class = "cardButtonIcon" src = "plus.png">
+                                    <img class = "cardButtonIcon" src = "./images/plus.png">
                                 </div>
                             </div>
                         </div>
@@ -83,36 +87,58 @@
                     </div>
 
                     <div class = "moneyScreen">
-    
+
+                        <p id = "chooseAmount">CHOOSE AMOUNT</p>
+
+                        <div class = "rewardsListArea" id = "moneyPresets"> 
+                            <!-- This area will be filled by the JS with the money presets defined in main.js-->
+                        </div>
+
+                        <p id = "orCustomAmount">OR</p>
+
+                        <input type="text" class="searchBar" id = "moneyInput" placeholder="ENTER A CUSTOM AMOUNT (NO COMMAS)"> 
+
+                        <div class = "moneyButtons">  <!-- These buttons are static across all of the different rewards screens, they do exactly what they are labeled as-->
+                            <button class="Button" id = "confirmMoney">CONFIRM CUSTOM AMOUNT</button> <!-- Takes you to reward summary screen -->
+                            <button class="Button" id = "cancelMoney">CANCEL</button>
+                        </div>
                     </div>
 
                     <div class = "itemsScreen">
 
                         <input type="text" class="searchBar" id = "itemSearchBar" placeholder="SEARCH FOR ITEMS"> 
 
-                        <div class = "rewardsListArea">
-                            <div class = "rewardCard itemCard">
+                        <div class = "rewardsListArea" id = "itemRewardsList">
+                            <div class = "rewardCard itemCard" itemName = "crowbar">
                                 <p class = "cardTitle"> Crowbar</p>
-                                <img class = "cardImage" src = "porsche.png">
+                                <img class = "cardImage" src = "./images/porsche.png">
+
                                 <div class = "cardButton itemAddButton">
-                                    <img class = "cardButtonIcon" src = "plus.png">
+                                    <img class = "cardButtonIcon" src = "./images/plus.png">
                                 </div>
+
                                 <div class = "itemQuantity"> 0 </div>
+
                                 <div class = "cardButton itemRemoveButton">
-                                    <img class = "cardButtonIcon" src = "minus.png">
+                                    <img class = "cardButtonIcon" src = "./images/minus.png">
                                 </div>
+
                             </div>
 
-                            <div class = "rewardCard itemCard">
-                                <p class = "cardTitle"> Crowbar</p>
-                                <img class = "cardImage" src = "porsche.png">
+                             <div class = "rewardCard itemCard" itemName = "lockpick">
+                                <p class = "cardTitle"> Lockpick</p>
+                                <img class = "cardImage" src = "./images/porsche.png">
+
                                 <div class = "cardButton itemAddButton">
-                                    <img class = "cardButtonIcon" src = "plus.png">
+                                    <img class = "cardButtonIcon" src = "./images/plus.png">
                                 </div>
+
                                 <div class = "itemQuantity"> 0 </div>
+
                                 <div class = "cardButton itemRemoveButton">
-                                    <img class = "cardButtonIcon" src = "minus.png">
+                                    <img class = "cardButtonIcon" src = "./images/minus.png">
                                 </div>
+                                
                             </div>
 
                         </div>
@@ -123,6 +149,7 @@
                 <div class = "bottomButtons">  <!-- These buttons are static across all of the different rewards screens, they do exactly what they are labeled as-->
                     <button class="Button" id = "confirmRewardsButton">CONFIRM REWARDS</button> <!-- Takes you to reward summary screen -->
                     <button class="Button" id = "editExistingButton">EDIT EXISTING CODE</button>
+                    <input type="text" class="searchBar" id = "existingCodeInput" placeholder="ENTER CODE"> 
                 </div>
 
             </div>
