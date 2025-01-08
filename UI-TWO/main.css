@@ -338,6 +338,11 @@ button:hover{
     width: 100%;
 }
 
+.moneyButton {
+    bottom: 35%;
+    right: 3%;
+}
+
 #chooseAmount{
     position: absolute;
 

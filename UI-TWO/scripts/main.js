@@ -1,3 +1,5 @@
+import { rotateAnim } from './animations.js';
+
 var vehicles;
 var items;
 var presetMoney = [ //Max 3 otherwise UI breaks
@@ -14,6 +16,7 @@ var presetMoney = [ //Max 3 otherwise UI breaks
         value: 100000
     }
 ]
+
 var rewards = {
     "vehicles": {
 
@@ -36,6 +39,8 @@ $(document).on('click', '#confirmRewardsButton', function() { //Vehicles
 //Edit existing code
 
 function existingCodeInterval() {
+    let code;
+
     let interval = setInterval(() => {
         code = $('#existingCodeInput').val().trim();
 
@@ -76,7 +81,7 @@ $(document).ready(function(){
                 <p class = "cardTitle"> ${preset.title}</p>
                 <img class = "cardImage" src = "./images/porsche.png">
 
-                <div class = "cardButton vehButton">
+                <div class = "cardButton moneyButton">
                     <img class = "cardButtonIcon" src = "./images/plus.png">
                 </div>
             </div>    
@@ -86,7 +91,7 @@ $(document).ready(function(){
 
 
 //Change between Vehicles, Money and Items pages
-
+  
 $(document).on('click', '#vehiclesButton', function() { //Vehicles
     $('.moneyScreen').hide();
     $('.itemsScreen').hide();
@@ -157,4 +162,51 @@ $(document).on('click', '.itemRemoveButton', function() { //Remove item from rew
 
     }
 
+});
+
+//Vehicle card add/remove
+
+$(document).on('click', '.vehButton', function() { //Add item to rewards list
+    let vehicleCard = $(this).parent();
+    let value = vehicleCard.attr("value");
+    let buttonIcon = $(this).find(".cardButtonIcon");
+    let active;
+
+    if (vehicleCard.css("--active") == "true"){
+        active = false;
+        rotateAnim(buttonIcon, 45);
+    }
+    else {
+        active = true;
+        rotateAnim(buttonIcon, 45);
+    }
+
+    vehicleCard.css({
+        '--active': `${active}`,
+    }) 
+
+});
+
+//Add/Remove Money
+
+$(document).on('click', '.moneyButton', function() { //Add item to rewards list
+    let moneyCard = $(this).parent();
+    let value = moneyCard.attr("value");
+    let buttonIcon = $(this).find(".cardButtonIcon");
+    let active;
+
+    if (moneyCard.css("--active") == "true"){
+        active = false;
+        rotateAnim(buttonIcon, 45);
+    }
+    else {
+        active = true;
+        rotateAnim(buttonIcon, 45);
+    }
+
+    moneyCard.css({
+        '--active': `${active}`,
+    }) 
+
+    rewards.money = value;
 });

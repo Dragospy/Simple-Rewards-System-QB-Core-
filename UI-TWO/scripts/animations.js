@@ -1,6 +1,14 @@
 //Card Button click animation
-function rotateAnim(element, degreesIncrement, active) {
-    var degrees = parseInt(element.css("--degrees")) || 0;
+export function rotateAnim(element, degreesIncrement) {
+    let degrees = parseInt(element.css("--degrees")) || 0;
+    
+    if (degrees >= 360){
+        buttonIcon.css({
+            '--degrees' : `${0}`
+        });
+
+        degrees = 0;
+    } // Resets button --degrees var to 0 once it reaches 360
 
     degrees += degreesIncrement;
 
@@ -15,25 +23,6 @@ function rotateAnim(element, degreesIncrement, active) {
     );
 
     element.css({
-        '--active': `${active}`,
         '--degrees': `${degrees}`
     });
 }
-
-$(document).on('click', '.vehButton', function() {
-
-    var buttonIcon = $(this).find(".cardButtonIcon");
-
-    if (parseInt(buttonIcon.css("--degrees")) >= 360){
-        buttonIcon.css({
-            '--degrees' : `${0}`
-        });
-    } // Resets button --degrees var to 0 once it reaches 360
-
-    if (buttonIcon.css("--active") == "true") {
-        rotateAnim(buttonIcon, 45, false);
-    }
-    else {
-        rotateAnim(buttonIcon, 45, true);
-    }
-});
