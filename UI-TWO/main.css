@@ -108,6 +108,8 @@ button:hover{
 
     z-index: 1;
 
+    padding-top: 7px;
+
     top: 2%;
     left: 3%;
 
@@ -119,13 +121,12 @@ button:hover{
     border: #000000;
     color: white;
 
+
+
 }
 
 .exitButtonIcon{
-    position: absolute;
-
-    top: 8%;
-    left: 25%;
+    position: relative;
 }
 
 .exitButton:hover{
@@ -195,6 +196,8 @@ button:hover{
 /* REWARDS SELECTION SCREEN */
 
 .selectRewardsScreen{
+    display: block;
+
     position: absolute;
 
     top: 7.5%;
@@ -458,4 +461,53 @@ button:hover{
     background: radial-gradient(50% 50% at 50% 50%, rgba(149, 149, 149, 0.85) 0%, rgba(210, 210, 210, 0.85) 100%);
     border-radius: 10px;
     color: white;
+}
+
+
+/*CONFIRM REWARDS SCREEN*/
+
+.confirmRewardsScreen{
+    display: none;
+}
+
+.sectionTitle{
+    color: white;
+    font-size: 64px;
+    text-align: center;
+}
+
+.chosenVehicles{
+    position: absolute;
+
+    width: 100%;
+    height: 25%;
+}
+
+.chosenRewards{
+    display: flex;
+
+    align-content: flex-start;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:10px;
+
+    margin-left: 13%;
+
+    width: 76%;
+    height: 80%;
+}
+
+.chosenItems{
+    position: absolute;
+
+    width: 100%;
+    height: 25%;
+}
+
+.chosenMoney{
+    position: absolute;
+
+    width: 100%;
+    height: 25%;
 }

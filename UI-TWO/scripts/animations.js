@@ -3,7 +3,7 @@ export function rotateAnim(element, degreesIncrement) {
     let degrees = parseInt(element.css("--degrees")) || 0;
     
     if (degrees >= 360){
-        buttonIcon.css({
+        element.css({
             '--degrees' : `${0}`
         });
 

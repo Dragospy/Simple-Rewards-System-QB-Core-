@@ -1,7 +1,28 @@
 import { rotateAnim } from './animations.js';
 
-var vehicles;
-var items;
+var vehicles = {
+    "turbos": {
+        "name": "Porsche 911 Turbo S",
+        "hex": "turbos",
+    },
+    "gt3": {
+        "name": "Porsche 911 GT3 RS",
+        "hex": "gt3"
+    }
+};
+
+
+var items = {
+    "crowbar": {
+        "name" : "Crowbar",
+        "hex": "crowbar",
+    },
+    "lockpick":{
+        "name" : "Lockpick",
+        "hex": "lockpick",
+    }
+};
+
 var presetMoney = [ //Max 3 otherwise UI breaks
     {
         title: "1,000$",
@@ -26,15 +47,6 @@ var rewards = {
         
     }
 }
-
-
-//Confirm Rewards
-
-$(document).on('click', '#confirmRewardsButton', function() { //Vehicles
-    $('.selectRewardsScreen').hide();
-
-    $('.confirmRewardsScreen').show();
-});
 
 //Edit existing code
 
@@ -168,15 +180,19 @@ $(document).on('click', '.itemRemoveButton', function() { //Remove item from rew
 
 $(document).on('click', '.vehButton', function() { //Add item to rewards list
     let vehicleCard = $(this).parent();
-    let value = vehicleCard.attr("value");
+    let hex = vehicleCard.attr("hex");
     let buttonIcon = $(this).find(".cardButtonIcon");
     let active;
 
     if (vehicleCard.css("--active") == "true"){
+        delete rewards.vehicles[hex];
+
         active = false;
         rotateAnim(buttonIcon, 45);
     }
     else {
+        rewards.vehicles[hex] = vehicles[hex];
+
         active = true;
         rotateAnim(buttonIcon, 45);
     }
@@ -184,7 +200,6 @@ $(document).on('click', '.vehButton', function() { //Add item to rewards list
     vehicleCard.css({
         '--active': `${active}`,
     }) 
-
 });
 
 //Add/Remove Money
@@ -196,10 +211,14 @@ $(document).on('click', '.moneyButton', function() { //Add item to rewards list
     let active;
 
     if (moneyCard.css("--active") == "true"){
+        rewards.money -= value;
+        
         active = false;
         rotateAnim(buttonIcon, 45);
     }
     else {
+        rewards.money = value;
+
         active = true;
         rotateAnim(buttonIcon, 45);
     }
@@ -207,6 +226,25 @@ $(document).on('click', '.moneyButton', function() { //Add item to rewards list
     moneyCard.css({
         '--active': `${active}`,
     }) 
-
-    rewards.money = value;
 });
+
+
+//Confirm Rewards
+
+$(document).on('click', '#confirmRewardsButton', function() { //Vehicles
+    $('.selectRewardsScreen').hide();
+
+    $('.confirmRewardsScreen').show();
+
+    displayRewards();
+});
+
+function displayRewards(){
+
+    for (let i = 0; i < rewards.vehicles.length; i++) {
+        let vehicle = rewards.vehicles[i];
+
+        
+    }
+
+}
