@@ -35,11 +35,7 @@ end)
 
 RegisterCommand(Config.OpenCommand, function(source)
     local src = source
-    if QBCore.Functions.HasPermission(src, "god")  or QBCore.Functions.HasPermission(src, "co-god") or QBCore.Functions.HasPermission(src, "dev") or QBCore.Functions.HasPermission(src, "manager") or QBCore.Functions.HasPermission(src, "managerstaff") or QBCore.Functions.HasPermission(src, "sadmin")or QBCore.Functions.HasPermission(src, "admin") or QBCore.Functions.HasPermission(src, "moderator") or QBCore.Functions.HasPermission(src, "helper") or QBCore.Functions.HasPermission(src, "helpert") then
-        TriggerClientEvent('qb-rewards:client:OpenUI', source)
-    else 
-        TriggerClientEvent('QBCore:Notify', source, "You don't have access", 'error')
-    end
+    TriggerClientEvent('qb-rewards:client:OpenUI', source)
 end, false)
 
 RegisterCommand(Config.ClaimCommand, function(source, code)

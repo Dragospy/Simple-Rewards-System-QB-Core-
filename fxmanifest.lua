@@ -20,5 +20,6 @@ ui_page 'UI/main.html'
 files {
     'UI/main.html',
     'UI/main.css',
-    'UI/main.js',
+    'UI/scripts/*.js',
+    'UI/images/*.png',
 }

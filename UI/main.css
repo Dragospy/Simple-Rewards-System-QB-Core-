@@ -57,6 +57,9 @@ button:hover{
     color: white;
 }
 
+#main_screen{
+    display: none;
+}
 
 /* MAIN BODY */
 
@@ -120,9 +123,6 @@ button:hover{
     border-radius: 10px;
     border: #000000;
     color: white;
-
-
-
 }
 
 .exitButtonIcon{
