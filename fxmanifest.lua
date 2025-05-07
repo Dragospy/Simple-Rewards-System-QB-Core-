@@ -22,4 +22,5 @@ files {
     'UI/main.css',
     'UI/scripts/*.js',
     'UI/images/*.png',
+    'UI/images/vehicleimage/*.png',
 }

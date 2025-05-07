@@ -57,9 +57,35 @@ button:hover{
     color: white;
 }
 
+/* Overall scrollbar */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px; /* for horizontal scrollbars */
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+
+border-radius: 6px;
+}
+
+/* Handle (thumb) */
+::-webkit-scrollbar-thumb {
+background: radial-gradient(50% 50% at 50% 50%, rgba(149, 149, 149, 0.85) 0%, rgba(210, 210, 210, 0.85) 100%);
+border-radius: 6px;
+}
+
+/* On hover */
+::-webkit-scrollbar-thumb:hover {
+background: #ffffff;
+}
+  
+
 #main_screen{
     display: none;
 }
+
+
 
 /* MAIN BODY */
 
@@ -220,11 +246,13 @@ button:hover{
     display: flex;
     position: absolute;
 
+    overflow-y: scroll;
+
     align-content: flex-start;
 
     flex-direction: row;
     flex-wrap: wrap;
-    gap:10px;
+    gap:5px;
 
     height: 90%;
     width: 100%;

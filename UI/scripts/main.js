@@ -17,18 +17,24 @@ let rewards = {
 //communitcation to LUA
 window.addEventListener('message', function(event) {
     let item = event.data;
+
+    console.log("loading");
+
     if (item.type === "ShowUI") {
-
-        let availableRewards = item.availableRewards;
-
-        vehicles = availableRewards.vehicles;
-        items = availableRewards.items;
-        money = availableRewards.money;
-
-
         $('#main_screen').show();
+    }
+
+    if (item.type === "loadAvailableRewards") {
+
+        vehicles = item.vehicles;
+        items = item.items;
+        money = item.money;
 
         displayMoneyCards(); //Display money cards
+        displayVehicleCards(); //Display vehicle cards
+
+        console.log(vehicles);
+        console.log(items);
     }
 });
 
@@ -87,12 +93,12 @@ function displayMoneyCards() {
 function displayVehicleCards() {
     let vehicleRewardsList = $('#vehicleRewardsList')
 
-    for (let vehicleCard of Object.values(money)) {
+    for (let vehicleCard of Object.values(vehicles)) {
 
         vehicleRewardsList.append(`
             <div class = "rewardCard vehicleCard" hex = "${vehicleCard.model}">
                 <p class = "cardTitle"> ${vehicleCard.name} </p>
-                <img class = "cardImage" src = "./images/${vehicleCard.name}.png">
+                <img class = "cardImage" src = "./images/vehicleImage/${vehicleCard.name}.png">
 
                 <div class = "cardButton vehButton">
                     <img class = "cardButtonIcon" src = "./images/plus.png">
@@ -102,21 +108,28 @@ function displayVehicleCards() {
     }
 }
 //Displays preset item cards
-function displayCards() {
-    console.log(money);
+function displayItemCards() {
+
     let moneyPresetList = $('#moneyPresets')
 
     for (let preset of Object.values(money)) {
 
         moneyPresetList.append(`
-            <div class = "rewardCard moneyPreset" value = "${preset.value}">
-                <p class = "cardTitle"> ${preset.title}</p>
+            <div class = "rewardCard itemCard" itemName = "lockpick">
+                <p class = "cardTitle"> Lockpick</p>
                 <img class = "cardImage" src = "./images/porsche.png">
 
-                <div class = "cardButton moneyButton">
+                <div class = "cardButton itemAddButton">
                     <img class = "cardButtonIcon" src = "./images/plus.png">
                 </div>
-            </div>    
+
+                <div class = "itemQuantity"> 0 </div>
+
+                <div class = "cardButton itemRemoveButton">
+                    <img class = "cardButtonIcon" src = "./images/minus.png">
+                </div>
+                
+            </div>   
         `)
     }
 }

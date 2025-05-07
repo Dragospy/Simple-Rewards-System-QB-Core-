@@ -47,11 +47,20 @@ function procureRewards()
 	return foundRewards
 end
 
+function loadAvailableRewards()
+	local foundRewards = procureRewards()
+	SendNUIMessage({
+		type = "loadAvailableRewards",
+		vehicles = foundRewards.vehicles,
+		items = foundRewards.items,
+		money = foundRewards.money,
+	})
+end
+
 function OpenUI()
     if not ui then
         SendNUIMessage({
             type = "ShowUI",
-			availableRewards = procureRewards(),
         })
         SetNuiFocus(true,true)
         ui = true   
@@ -161,5 +170,6 @@ end)
 
 RegisterNetEvent("qb-rewards:client:OpenUI")
 AddEventHandler("qb-rewards:client:OpenUI", function()
+	loadAvailableRewards()
     OpenUI()
 end)
